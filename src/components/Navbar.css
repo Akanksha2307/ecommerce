@@ -1,0 +1,423 @@
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+  width: 100%;
+
+  background: var(--surface);
+
+  border-bottom: 1px solid var(--border);
+
+  position: relative;
+
+  z-index: 1000;
+}
+
+
+/* ========================================
+   NAV CONTAINER
+======================================== */
+
+.nav-container {
+  width: min(1200px, 92%);
+
+  min-height: 72px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--primary);
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
+}
+
+.logo svg {
+  color: var(--primary);
+
+  flex-shrink: 0;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 34px;
+
+  flex: 1;
+}
+
+
+.nav-links a {
+  position: relative;
+
+  color: var(--text-primary);
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  padding: 25px 0;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+
+.nav-links a.active {
+  color: var(--primary);
+}
+
+
+.nav-links a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 18px;
+
+  height: 2px;
+
+  background: var(--primary);
+
+  border-radius: 2px;
+}
+
+
+/* ========================================
+   LOGOUT
+======================================== */
+
+.nav-logout {
+  border: none;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  padding: 25px 0;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.nav-logout:hover {
+  color: var(--danger);
+}
+
+
+/* ========================================
+   NAV ACTIONS
+======================================== */
+
+.nav-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  flex-shrink: 0;
+}
+
+
+/* ========================================
+   NAV ICON
+======================================== */
+
+.nav-icon {
+  position: relative;
+
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--primary);
+
+  border-radius: 50%;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.nav-icon:hover {
+  background: var(--background);
+
+  transform: translateY(-1px);
+}
+
+
+.nav-icon svg {
+  width: 22px;
+
+  height: 22px;
+}
+
+
+/* ========================================
+   ICON BADGE
+======================================== */
+
+.nav-icon span {
+  position: absolute;
+
+  top: -3px;
+
+  right: -3px;
+
+  min-width: 19px;
+
+  height: 19px;
+
+  padding: 0 5px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobile-menu {
+  display: none;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  padding: 8px;
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 850px) {
+
+  .nav-container {
+    min-height: 65px;
+
+    gap: 15px;
+  }
+
+
+  .logo {
+    font-size: 23px;
+  }
+
+
+  .nav-links {
+    gap: 18px;
+  }
+
+
+  .nav-links a,
+  .nav-logout {
+    font-size: 14px;
+  }
+
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .mobile-menu {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    order: 2;
+  }
+
+
+  .nav-actions {
+    order: 3;
+  }
+
+
+  .nav-links {
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    right: 0;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 10px 20px 20px;
+
+    background: var(--surface);
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    flex: none;
+  }
+
+
+  .nav-links.open {
+    display: flex;
+  }
+
+
+  .nav-links a,
+  .nav-logout {
+    width: 100%;
+
+    padding: 13px 10px;
+
+    text-align: left;
+  }
+
+
+  .nav-links a.active::after {
+    display: none;
+  }
+
+
+  .nav-links a.active {
+    background: var(--background);
+
+    border-radius: 8px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .nav-container {
+    width: 94%;
+
+    min-height: 60px;
+  }
+
+
+  .logo {
+    font-size: 21px;
+
+    gap: 6px;
+  }
+
+
+  .logo svg {
+    width: 23px;
+
+    height: 23px;
+  }
+
+
+  .nav-actions {
+    gap: 3px;
+  }
+
+
+  .nav-icon {
+    width: 38px;
+
+    height: 38px;
+  }
+
+}

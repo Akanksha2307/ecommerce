@@ -1,0 +1,705 @@
+/* ======================================================
+   SUPER ADMIN LOGIN
+====================================================== */
+
+.super-admin-login-page {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #f4f7f5;
+
+}
+
+
+.super-admin-login-card {
+
+  width: 420px;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 15px 40px
+    rgba(0, 0, 0, 0.1);
+
+}
+
+
+.super-admin-logo {
+
+  color: #0d4d3d;
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  margin-bottom: 25px;
+
+}
+
+
+.super-admin-login-card h1 {
+
+  margin: 0 0 8px;
+
+  color: #102a43;
+
+}
+
+
+.super-admin-login-card p {
+
+  color: #6b7280;
+
+  margin-bottom: 25px;
+
+}
+
+
+.super-admin-login-card form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+}
+
+
+.super-admin-login-card input {
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px;
+
+  border:
+    1px solid #d8dfdc;
+
+  border-radius: 8px;
+
+  outline: none;
+
+}
+
+
+.super-admin-login-card input:focus {
+
+  border-color: #0d4d3d;
+
+}
+
+
+.super-admin-login-card button {
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #0d4d3d;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+}
+
+
+.super-admin-error {
+
+  padding: 12px;
+
+  background: #fee2e2;
+
+  color: #b91c1c;
+
+  border-radius: 8px;
+
+  margin-bottom: 15px;
+
+}
+
+
+/* ======================================================
+   LAYOUT
+====================================================== */
+
+.super-admin-layout {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #f5f7f6;
+
+}
+
+
+/* ======================================================
+   SIDEBAR
+====================================================== */
+
+.super-admin-sidebar {
+
+  width: 230px;
+
+  background: #092d25;
+
+  color: white;
+
+  padding: 25px 16px;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.super-admin-brand {
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  padding: 8px 14px 30px;
+
+}
+
+
+.super-admin-menu {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+}
+
+
+.super-admin-menu button {
+
+  border: none;
+
+  background: transparent;
+
+  color: #d8e4df;
+
+  padding: 13px 14px;
+
+  text-align: left;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+}
+
+
+.super-admin-menu button:hover,
+
+.super-admin-menu button.active {
+
+  background: #155744;
+
+  color: white;
+
+}
+
+
+.super-admin-logout {
+
+  margin-top: auto;
+
+  border: none;
+
+  padding: 13px;
+
+  border-radius: 8px;
+
+  background: #dc4426;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+}
+
+
+/* ======================================================
+   MAIN
+====================================================== */
+
+.super-admin-main {
+
+  flex: 1;
+
+  padding: 35px;
+
+  overflow-x: auto;
+
+}
+
+
+.super-admin-header {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+
+}
+
+
+.super-admin-header h1 {
+
+  margin: 0;
+
+  color: #172b4d;
+
+}
+
+
+.super-admin-header p {
+
+  margin:
+    5px 0 0;
+
+  color: #6b7280;
+
+}
+
+
+.add-admin-top-button {
+
+  border: none;
+
+  background: #0d4d3d;
+
+  color: white;
+
+  padding:
+    12px 20px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+}
+
+
+/* ======================================================
+   CARD
+====================================================== */
+
+.super-admin-card {
+
+  background: white;
+
+  border-radius: 15px;
+
+  padding: 25px;
+
+  margin-bottom: 25px;
+
+  box-shadow:
+    0 4px 18px
+    rgba(0, 0, 0, 0.05);
+
+}
+
+
+.super-admin-card-title {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+
+}
+
+
+.super-admin-card-title h2 {
+
+  margin: 0;
+
+  color: #172b4d;
+
+}
+
+
+.cancel-edit {
+
+  border: none;
+
+  background: #eee;
+
+  padding: 8px 14px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+}
+
+
+/* ======================================================
+   ADD ADMIN FORM
+====================================================== */
+
+.add-admin-form {
+
+  max-width: 700px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+}
+
+
+.add-admin-form > input {
+
+  padding: 13px;
+
+  border:
+    1px solid #d6ddd9;
+
+  border-radius: 8px;
+
+  outline: none;
+
+}
+
+
+.add-admin-form > input:focus {
+
+  border-color: #0d4d3d;
+
+}
+
+
+.permissions-section {
+
+  margin-top: 8px;
+
+}
+
+
+.permissions-section h3 {
+
+  margin:
+    0 0 10px;
+
+  font-size: 15px;
+
+  color: #374151;
+
+}
+
+
+.permissions-grid {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+}
+
+
+.permissions-grid label {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #374151;
+
+}
+
+
+.create-admin-button {
+
+  width: 340px;
+
+  border: none;
+
+  background: #ef5b20;
+
+  color: white;
+
+  padding: 13px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+}
+
+
+/* ======================================================
+   TABLE
+====================================================== */
+
+.admins-table-wrapper {
+
+  overflow-x: auto;
+
+}
+
+
+.admins-table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+}
+
+
+.admins-table th {
+
+  text-align: left;
+
+  padding: 14px;
+
+  color: #374151;
+
+  border-bottom:
+    1px solid #e5e7eb;
+
+  font-size: 14px;
+
+}
+
+
+.admins-table td {
+
+  padding: 15px 14px;
+
+  border-bottom:
+    1px solid #edf0ee;
+
+  color: #374151;
+
+}
+
+
+.admin-role-badge {
+
+  display: inline-block;
+
+  padding:
+    5px 9px;
+
+  background: #e8f4ef;
+
+  color: #0d4d3d;
+
+  border-radius: 15px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+}
+
+
+.permission-tags {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+}
+
+
+.permission-tags span {
+
+  padding:
+    4px 7px;
+
+  background: #f1f5f3;
+
+  border-radius: 5px;
+
+  font-size: 12px;
+
+}
+
+
+.status-active {
+
+  color: #15803d;
+
+  font-weight: 700;
+
+}
+
+
+.status-inactive {
+
+  color: #dc2626;
+
+  font-weight: 700;
+
+}
+
+
+.admin-actions {
+
+  display: flex;
+
+  gap: 6px;
+
+  flex-wrap: wrap;
+
+}
+
+
+.admin-actions button {
+
+  border: none;
+
+  border-radius: 6px;
+
+  padding:
+    7px 10px;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+}
+
+
+.edit-admin-button {
+
+  background: #374151;
+
+}
+
+
+.deactivate-button {
+
+  background: #dc4426;
+
+}
+
+
+.reactivate-button {
+
+  background: #16834b;
+
+}
+
+
+.delete-admin-button {
+
+  background: #991b1b;
+
+}
+
+
+.empty-admins {
+
+  text-align: center;
+
+  padding: 35px !important;
+
+  color: #6b7280;
+
+}
+
+
+.super-admin-loading {
+
+  text-align: center;
+
+  padding: 30px;
+
+  color: #6b7280;
+
+}
+
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (
+  max-width: 800px
+) {
+
+  .super-admin-sidebar {
+
+    width: 180px;
+
+  }
+
+
+  .super-admin-main {
+
+    padding: 20px;
+
+  }
+
+
+  .super-admin-header {
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+  }
+
+
+  .create-admin-button {
+
+    width: 100%;
+
+  }
+
+}

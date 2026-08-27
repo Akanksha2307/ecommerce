@@ -1,0 +1,1542 @@
+/* ======================================================
+   GREENCART THEME
+   ONLY BLACK + WHITE + GREEN
+   LIGHT + DARK
+====================================================== */
+
+:root {
+  /* ================================
+     GREEN
+  ================================= */
+  --primary: #145c43;
+  --primary-light: #1f7a59;
+  --secondary: #d9eee5;
+
+  /* ================================
+     LIGHT THEME
+  ================================= */
+  --background: #ffffff;
+  --surface: #ffffff;
+
+  --text-primary: #111111;
+  --text-secondary: #333333;
+
+  --border: #d8d8d8;
+
+  --success: #145c43;
+  --danger: #111111;
+
+  --shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ======================================================
+   DARK THEME
+====================================================== */
+
+[data-theme="dark"] {
+
+  --primary: #70c99d;
+  --primary-light: #8ad8b1;
+  --secondary: #193f32;
+
+  --background: #111111;
+  --surface: #1c1c1c;
+
+  --text-primary: #ffffff;
+  --text-secondary: #d0d0d0;
+
+  --border: #333333;
+
+  --success: #70c99d;
+  --danger: #ffffff;
+
+  --shadow:
+    0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ======================================================
+   GLOBAL
+====================================================== */
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+
+body {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+button,
+input,
+select,
+textarea {
+  color: var(--text-primary);
+}
+
+
+input,
+select,
+textarea {
+  background: var(--surface);
+  color: var(--text-primary);
+
+  border-color: var(--border);
+}
+
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+
+option {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+
+/* ======================================================
+   LINKS
+====================================================== */
+
+a {
+  color: var(--primary);
+}
+
+
+a:hover {
+  color: var(--primary-light);
+}
+
+
+/* ======================================================
+   THEME TOGGLE
+====================================================== */
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 50%;
+
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+
+  border-color: var(--primary);
+
+  color: var(--primary);
+}
+
+
+/* ======================================================
+   NAVBAR
+====================================================== */
+
+.navbar {
+  background: var(--surface);
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+
+.logo,
+.logo svg,
+.nav-icon,
+.mobile-menu {
+  color: var(--primary);
+}
+
+
+.nav-links a {
+  color: var(--text-primary);
+}
+
+
+.nav-links a:hover,
+.nav-links a.active,
+.nav-logout:hover {
+  color: var(--primary);
+}
+
+
+.nav-links a.active {
+  border-bottom-color:
+    var(--primary) !important;
+}
+
+
+.nav-logout {
+  color: var(--text-primary);
+}
+
+
+.nav-icon:hover {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+
+/* ======================================================
+   PRODUCT CARD
+====================================================== */
+
+.product-card {
+  color: var(--text-primary);
+}
+
+
+.product-info h3 {
+  color: var(--text-primary);
+}
+
+
+.product-category {
+  color: var(--text-secondary);
+}
+
+
+.rating {
+  color: var(--text-secondary);
+}
+
+
+.product-bottom strong {
+  color: var(--primary);
+}
+
+
+/* ======================================================
+   PRODUCT IMAGE
+====================================================== */
+
+.product-image {
+  background: #ffffff;
+}
+
+
+/* ======================================================
+   WISHLIST
+====================================================== */
+
+.wishlist-button {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.wishlist-button:hover {
+  color: var(--primary);
+
+  border-color:
+    var(--primary);
+}
+
+
+.wishlist-button.liked {
+  color: var(--primary);
+}
+
+
+/* ======================================================
+   ADD TO CART
+====================================================== */
+
+.add-cart-button {
+  background: var(--primary);
+
+  color: #ffffff;
+}
+
+
+.add-cart-button:hover {
+  background: var(--primary-light);
+}
+
+
+/* ======================================================
+   QUANTITY CONTROL
+====================================================== */
+
+.quantity-control {
+  background: var(--primary);
+
+  color: #ffffff;
+}
+
+
+.quantity-control button {
+  background: #ffffff;
+
+  color: var(--primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.quantity-control button:hover:not(:disabled) {
+  background: var(--secondary);
+}
+
+
+.quantity-control button:disabled {
+  opacity: 0.45;
+}
+
+
+/* ======================================================
+   OUT OF STOCK
+====================================================== */
+
+.out-of-stock-button {
+  background: #111111;
+
+  color: #ffffff;
+
+  border:
+    1px solid #333333;
+
+  cursor: not-allowed;
+
+  opacity: 0.8;
+}
+
+
+.out-of-stock-button:hover {
+  background: #111111;
+
+  color: #ffffff;
+
+  transform: none;
+
+  opacity: 0.8;
+}
+
+
+/* ======================================================
+   PRODUCTS PAGE
+====================================================== */
+
+.products-page,
+.products-header,
+.no-products {
+  color: var(--text-primary);
+}
+
+
+.search-box,
+.filter-select,
+.sort-select {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.search-box input,
+.filter-select select,
+.sort-select select {
+  background: transparent;
+
+  color: var(--text-primary);
+
+  border: none;
+}
+
+
+.search-box:focus-within,
+.filter-select:focus-within,
+.sort-select:focus-within {
+  border-color:
+    var(--primary);
+}
+
+
+/* ======================================================
+   CART
+====================================================== */
+
+.cart-item,
+.cart-page .order-summary {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border-color:
+    var(--border);
+}
+
+
+.cart-item-info h3 {
+  color: var(--text-primary);
+}
+
+
+.quantity button {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.quantity button:hover {
+  border-color:
+    var(--primary);
+
+  color: var(--primary);
+}
+
+
+.delete-button {
+  color: var(--text-primary);
+}
+
+
+.delete-button:hover {
+  color: var(--primary);
+}
+
+
+.cart-stock-error {
+  background: var(--secondary);
+
+  color: var(--primary);
+
+  border:
+    1px solid var(--primary);
+}
+
+
+/* ======================================================
+   ORDERS
+====================================================== */
+
+.order-card,
+.no-orders,
+.orders-message {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border-color:
+    var(--border);
+}
+
+
+.order-card-header strong,
+.order-products h3,
+.order-total strong {
+  color: var(--primary);
+}
+
+
+.order-card-header span,
+.order-date,
+.order-product span,
+.order-summary span {
+  color: var(--text-secondary);
+}
+
+
+.order-product {
+  border-bottom-color:
+    var(--border);
+}
+
+
+.order-product strong,
+.order-total span,
+.order-summary strong {
+  color: var(--text-primary);
+}
+
+
+.order-summary {
+  background: var(--surface);
+
+  border-top-color:
+    var(--border);
+}
+
+
+.order-summary .order-total {
+  border-top-color:
+    var(--border);
+}
+
+
+.view-order {
+  background: var(--primary);
+
+  color: #ffffff;
+}
+
+
+.view-order:hover {
+  background: var(--primary-light);
+}
+
+
+/* ======================================================
+   WISHLIST PAGE
+====================================================== */
+
+.empty-wishlist {
+  color: var(--text-secondary);
+}
+
+
+.empty-wishlist h2 {
+  color: var(--text-primary);
+}
+
+
+/* ======================================================
+   CHECKOUT
+====================================================== */
+
+.checkout-summary,
+.checkout-page .card-input,
+.checkout-page input {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border-color:
+    var(--border);
+}
+
+
+.checkout-summary span,
+.checkout-summary p {
+  color: var(--text-secondary);
+}
+
+
+.checkout-summary strong,
+.checkout-title h2 {
+  color: var(--text-primary);
+}
+
+
+.checkout-summary hr {
+  border-top-color:
+    var(--border);
+}
+
+
+/* ======================================================
+   PRODUCT DETAILS
+====================================================== */
+
+.details-image {
+  background: var(--surface);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.wishlist-large {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.wishlist-large:hover {
+  color: var(--primary);
+
+  border-color:
+    var(--primary);
+}
+
+
+.details-content h1,
+.product-error h2 {
+  color: var(--text-primary);
+}
+
+
+/* ======================================================
+   ORDER SUCCESS
+====================================================== */
+
+.success-card {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.billing-box,
+.order-number {
+  background: var(--background);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.billing-row strong,
+.billing-item strong,
+.billing-total span {
+  color: var(--text-primary);
+}
+
+
+.billing-item {
+  border-bottom-color:
+    var(--border);
+}
+
+
+.billing-box hr,
+.billing-total {
+  border-top-color:
+    var(--border);
+}
+
+
+/* ======================================================
+   LOGIN / REGISTER
+====================================================== */
+
+.auth-card {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.auth-field input {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border-color:
+    var(--border);
+}
+
+
+.auth-field input:focus {
+  border-color:
+    var(--primary);
+}
+
+
+.auth-error {
+  background: var(--secondary);
+
+  color: var(--primary);
+
+  border:
+    1px solid var(--primary);
+}
+
+
+/* ======================================================
+   ADMIN
+====================================================== */
+
+.admin-layout,
+.admin-login-page {
+  background: var(--background);
+}
+
+
+.admin-header,
+.admin-stat-card,
+.admin-panel-card,
+.admin-form-card,
+.admin-table-card,
+.admin-loading,
+.admin-login-card {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border-color:
+    var(--border);
+}
+
+
+.admin-sidebar {
+  background: var(--primary);
+}
+
+
+.admin-brand {
+  color: #ffffff;
+}
+
+
+.admin-header h1,
+.admin-panel-card h2,
+.admin-form-card h2,
+.admin-table-header h2,
+.admin-login-card h1 {
+  color: var(--text-primary);
+}
+
+
+.admin-header p,
+.admin-stat-card span,
+.admin-stat-card small,
+.admin-muted,
+.table-count,
+.admin-loading,
+.admin-login-card > p {
+  color: var(--text-secondary);
+}
+
+
+.admin-stat-card strong {
+  color: var(--primary);
+}
+
+
+.admin-account {
+  background: var(--primary);
+
+  color: #ffffff;
+}
+
+
+.admin-form input,
+.admin-form textarea,
+.admin-form-group input,
+.admin-search,
+.admin-file-input,
+.admin-thumbnail-input {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.admin-form input:focus,
+.admin-form textarea:focus,
+.admin-form-group input:focus,
+.admin-search:focus {
+  border-color:
+    var(--primary);
+}
+
+
+.admin-table-wrapper th {
+  background: var(--secondary);
+
+  color: var(--text-primary);
+}
+
+
+.admin-table-wrapper td {
+  color: var(--text-primary);
+
+  border-top-color:
+    var(--border);
+}
+
+
+.admin-table-wrapper tbody tr:hover {
+  background: var(--secondary);
+}
+
+
+.status-row,
+.stock-row {
+  color: var(--text-primary);
+
+  border-bottom-color:
+    var(--border);
+}
+
+
+.stock-product span,
+.admin-product strong,
+.admin-image-label {
+  color: var(--text-primary);
+}
+
+
+.admin-product small,
+.empty-table {
+  color: var(--text-secondary);
+}
+
+
+.admin-secondary-btn {
+  background: var(--secondary);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.admin-secondary-btn:hover {
+  border-color:
+    var(--primary);
+
+  color: var(--primary);
+}
+
+
+.admin-image-preview {
+  background: var(--background);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.revenue-card {
+  background: var(--surface);
+}
+
+
+/* ======================================================
+   SUPER ADMIN
+====================================================== */
+
+.super-admin-login-page,
+.super-admin-layout {
+  background: var(--background);
+}
+
+
+.super-admin-login-card,
+.super-admin-card {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.super-admin-sidebar {
+  background: var(--primary);
+}
+
+
+.super-admin-login-card h1,
+.super-admin-card-title h2,
+.super-admin-header h1 {
+  color: var(--text-primary);
+}
+
+
+.super-admin-login-card p,
+.super-admin-header p,
+.super-admin-loading,
+.empty-admins {
+  color: var(--text-secondary);
+}
+
+
+.super-admin-login-card input,
+.add-admin-form > input {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.super-admin-login-card input:focus,
+.add-admin-form > input:focus {
+  border-color:
+    var(--primary);
+}
+
+
+.cancel-edit {
+  background: var(--secondary);
+
+  color: var(--text-primary);
+
+  border:
+    1px solid var(--border);
+}
+
+
+.permissions-section h3,
+.permissions-grid label {
+  color: var(--text-primary);
+}
+
+
+.admins-table th {
+  color: var(--text-secondary);
+
+  border-bottom-color:
+    var(--border);
+}
+
+
+.admins-table td {
+  color: var(--text-primary);
+
+  border-bottom-color:
+    var(--border);
+}
+
+
+.admin-role-badge {
+  background: var(--secondary);
+
+  color: var(--primary);
+
+  border:
+    1px solid var(--primary);
+}
+
+
+.permission-tags span {
+  background: var(--secondary);
+
+  color: var(--text-primary);
+}
+
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.footer {
+  background: var(--primary);
+
+  color: #ffffff;
+}
+
+
+.footer a {
+  color: #ffffff;
+}
+
+
+.footer a:hover {
+  color: #ffffff;
+
+  opacity: 0.8;
+}
+
+
+/* ======================================================
+   GENERIC SURFACES
+====================================================== */
+
+.surface,
+.card {
+  background: var(--surface);
+
+  color: var(--text-primary);
+
+  border-color:
+    var(--border);
+}
+
+
+/* ======================================================
+   DARK THEME - COMMON OVERRIDES
+====================================================== */
+
+[data-theme="dark"] {
+
+  color-scheme: dark;
+}
+
+
+[data-theme="dark"] body {
+  background: #111111;
+
+  color: #ffffff;
+}
+
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background: #1c1c1c !important;
+
+  color: #ffffff !important;
+
+  border-color: #333333 !important;
+}
+
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #d0d0d0 !important;
+}
+
+
+[data-theme="dark"] option {
+  background: #1c1c1c;
+
+  color: #ffffff;
+}
+
+
+/* ======================================================
+   DARK PRODUCT IMAGE
+   Keep image area WHITE because product images
+   are designed for a white background.
+====================================================== */
+
+[data-theme="dark"] .product-image {
+  background: #ffffff !important;
+}
+
+
+/* ======================================================
+   DARK NAVBAR
+====================================================== */
+
+[data-theme="dark"] .navbar {
+  background: #1c1c1c;
+
+  border-bottom-color:
+    #333333;
+}
+
+
+[data-theme="dark"] .nav-links a {
+  color: #ffffff;
+}
+
+
+[data-theme="dark"] .nav-links a:hover,
+[data-theme="dark"] .nav-links a.active {
+  color: var(--primary);
+}
+
+
+/* ======================================================
+   DARK PRODUCT CARD
+====================================================== */
+
+[data-theme="dark"] .product-card {
+  background: #1c1c1c;
+
+  color: #ffffff;
+}
+
+
+[data-theme="dark"] .product-info h3 {
+  color: #ffffff;
+}
+
+
+[data-theme="dark"] .product-category,
+[data-theme="dark"] .rating {
+  color: #d0d0d0;
+}
+
+
+[data-theme="dark"] .wishlist-button {
+  background: #1c1c1c;
+
+  color: #ffffff;
+
+  border-color:
+    #333333;
+}
+
+
+/* ======================================================
+   DARK CART
+====================================================== */
+
+[data-theme="dark"] .cart-item,
+[data-theme="dark"] .cart-page .order-summary {
+  background: #1c1c1c;
+
+  color: #ffffff;
+
+  border-color:
+    #333333;
+}
+
+
+[data-theme="dark"] .cart-item-info h3 {
+  color: #ffffff;
+}
+
+
+[data-theme="dark"] .quantity button {
+  background: #1c1c1c;
+
+  color: #ffffff;
+
+  border-color:
+    #333333;
+}
+
+
+/* ======================================================
+   DARK ORDERS
+====================================================== */
+
+[data-theme="dark"] .order-card,
+[data-theme="dark"] .no-orders,
+[data-theme="dark"] .orders-message {
+  background: #1c1c1c;
+
+  color: #ffffff;
+
+  border-color:
+    #333333;
+}
+
+
+[data-theme="dark"] .order-card-header strong,
+[data-theme="dark"] .order-products h3,
+[data-theme="dark"] .order-total strong {
+  color: var(--primary);
+}
+
+
+[data-theme="dark"] .order-card-header span,
+[data-theme="dark"] .order-date,
+[data-theme="dark"] .order-product span,
+[data-theme="dark"] .order-summary span {
+  color: #d0d0d0;
+}
+
+
+[data-theme="dark"] .order-product {
+  border-bottom-color:
+    #333333;
+}
+
+
+[data-theme="dark"] .order-product strong,
+[data-theme="dark"] .order-total span,
+[data-theme="dark"] .order-summary strong {
+  color: #ffffff;
+}
+
+
+[data-theme="dark"] .order-summary {
+  background: #1c1c1c;
+
+  border-top-color:
+    #333333;
+}
+
+
+/* ======================================================
+   DARK CHECKOUT
+====================================================== */
+
+[data-theme="dark"] .checkout-summary,
+[data-theme="dark"] .checkout-page .card-input,
+[data-theme="dark"] .checkout-page input {
+  background: #1c1c1c !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333 !important;
+}
+
+
+[data-theme="dark"] .checkout-summary span,
+[data-theme="dark"] .checkout-summary p {
+  color: #d0d0d0 !important;
+}
+
+
+[data-theme="dark"] .checkout-summary strong,
+[data-theme="dark"] .checkout-title h2 {
+  color: #ffffff !important;
+}
+
+
+/* ======================================================
+   DARK PRODUCT DETAILS
+====================================================== */
+
+[data-theme="dark"] .details-image {
+  background: #1c1c1c !important;
+
+  border-color:
+    #333333;
+}
+
+
+[data-theme="dark"] .wishlist-large {
+  background: #1c1c1c !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333 !important;
+}
+
+
+[data-theme="dark"] .details-content h1,
+[data-theme="dark"] .product-error h2 {
+  color: #ffffff !important;
+}
+
+
+/* ======================================================
+   DARK ORDER SUCCESS
+====================================================== */
+
+[data-theme="dark"] .success-card {
+  background: #1c1c1c !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333;
+}
+
+
+[data-theme="dark"] .billing-box,
+[data-theme="dark"] .order-number {
+  background: #111111 !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333;
+}
+
+
+[data-theme="dark"] .billing-row strong,
+[data-theme="dark"] .billing-item strong,
+[data-theme="dark"] .billing-total span {
+  color: #ffffff !important;
+}
+
+
+/* ======================================================
+   DARK LOGIN
+====================================================== */
+
+[data-theme="dark"] .auth-card {
+  background: #1c1c1c !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333 !important;
+}
+
+
+[data-theme="dark"] .auth-field input {
+  background: #1c1c1c !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333 !important;
+}
+
+
+/* ======================================================
+   DARK ADMIN
+====================================================== */
+
+[data-theme="dark"] .admin-layout,
+[data-theme="dark"] .admin-login-page {
+  background: #111111 !important;
+}
+
+
+[data-theme="dark"] .admin-header,
+[data-theme="dark"] .admin-stat-card,
+[data-theme="dark"] .admin-panel-card,
+[data-theme="dark"] .admin-form-card,
+[data-theme="dark"] .admin-table-card,
+[data-theme="dark"] .admin-loading,
+[data-theme="dark"] .admin-login-card {
+  background: #1c1c1c !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333 !important;
+}
+
+
+[data-theme="dark"] .admin-sidebar {
+  background: #145c43 !important;
+}
+
+
+[data-theme="dark"] .admin-header h1,
+[data-theme="dark"] .admin-panel-card h2,
+[data-theme="dark"] .admin-form-card h2,
+[data-theme="dark"] .admin-table-header h2,
+[data-theme="dark"] .admin-login-card h1 {
+  color: #ffffff !important;
+}
+
+
+[data-theme="dark"] .admin-header p,
+[data-theme="dark"] .admin-stat-card span,
+[data-theme="dark"] .admin-stat-card small,
+[data-theme="dark"] .admin-muted,
+[data-theme="dark"] .table-count,
+[data-theme="dark"] .admin-loading,
+[data-theme="dark"] .admin-login-card > p {
+  color: #d0d0d0 !important;
+}
+
+
+[data-theme="dark"] .admin-stat-card strong {
+  color: var(--primary) !important;
+}
+
+
+[data-theme="dark"] .admin-account {
+  background: var(--primary) !important;
+
+  color: #ffffff !important;
+}
+
+
+[data-theme="dark"] .admin-form input,
+[data-theme="dark"] .admin-form textarea,
+[data-theme="dark"] .admin-form-group input,
+[data-theme="dark"] .admin-search,
+[data-theme="dark"] .admin-file-input,
+[data-theme="dark"] .admin-thumbnail-input {
+  background: #1c1c1c !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333 !important;
+}
+
+
+[data-theme="dark"] .admin-table-wrapper th {
+  background: #193f32 !important;
+
+  color: #ffffff !important;
+}
+
+
+[data-theme="dark"] .admin-table-wrapper td {
+  color: #ffffff !important;
+
+  border-top-color:
+    #333333 !important;
+}
+
+
+[data-theme="dark"] .admin-table-wrapper tbody tr:hover {
+  background: #193f32 !important;
+}
+
+
+[data-theme="dark"] .admin-secondary-btn {
+  background: #193f32 !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333 !important;
+}
+
+
+/* ======================================================
+   DARK SUPER ADMIN
+====================================================== */
+
+[data-theme="dark"] .super-admin-login-page,
+[data-theme="dark"] .super-admin-layout {
+  background: #111111 !important;
+}
+
+
+[data-theme="dark"] .super-admin-login-card,
+[data-theme="dark"] .super-admin-card {
+  background: #1c1c1c !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333 !important;
+}
+
+
+[data-theme="dark"] .super-admin-sidebar {
+  background: #145c43 !important;
+}
+
+
+[data-theme="dark"] .super-admin-login-card h1,
+[data-theme="dark"] .super-admin-card-title h2,
+[data-theme="dark"] .super-admin-header h1 {
+  color: #ffffff !important;
+}
+
+
+[data-theme="dark"] .super-admin-login-card p,
+[data-theme="dark"] .super-admin-header p,
+[data-theme="dark"] .super-admin-loading,
+[data-theme="dark"] .empty-admins {
+  color: #d0d0d0 !important;
+}
+
+
+[data-theme="dark"] .super-admin-login-card input,
+[data-theme="dark"] .add-admin-form > input {
+  background: #1c1c1c !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333 !important;
+}
+
+
+[data-theme="dark"] .cancel-edit {
+  background: #193f32 !important;
+
+  color: #ffffff !important;
+
+  border-color:
+    #333333 !important;
+}
+
+
+[data-theme="dark"] .permissions-section h3,
+[data-theme="dark"] .permissions-grid label {
+  color: #ffffff !important;
+}
+
+
+[data-theme="dark"] .admins-table th {
+  color: #d0d0d0 !important;
+
+  border-bottom-color:
+    #333333 !important;
+}
+
+
+[data-theme="dark"] .admins-table td {
+  color: #ffffff !important;
+
+  border-bottom-color:
+    #333333 !important;
+}
+
+
+[data-theme="dark"] .admin-role-badge {
+  background: #193f32 !important;
+
+  color: var(--primary) !important;
+
+  border-color:
+    var(--primary);
+}
+
+
+[data-theme="dark"] .permission-tags span {
+  background: #193f32 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* ======================================================
+   DARK FOOTER
+====================================================== */
+
+[data-theme="dark"] .footer {
+  background: #145c43 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 768px) {
+
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+}

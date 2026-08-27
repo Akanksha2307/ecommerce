@@ -1,0 +1,398 @@
+/* ========================================
+   SUCCESS PAGE
+======================================== */
+
+.success-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+
+}
+
+
+/* ========================================
+   SUCCESS CARD
+======================================== */
+
+.success-card {
+  max-width: 650px;
+  width: 100%;
+  background: white;
+  padding: 55px 35px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+
+}
+
+
+/* ========================================
+   SUCCESS ICON
+======================================== */
+
+.success-icon {
+  color: var(--success);
+  margin-bottom: 20px;
+}
+
+
+/* ========================================
+   HEADING
+======================================== */
+
+.success-card h1 {
+  font-size: 38px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.success-card > p {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+
+/* ========================================
+   ORDER NUMBER
+======================================== */
+
+.order-number {
+
+  background: var(--background);
+
+  padding: 18px;
+
+  border-radius: 10px;
+
+  margin-bottom: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+
+.order-number span {
+
+  color: var(--text-secondary);
+
+}
+
+
+.order-number strong {
+
+  color: var(--primary);
+
+}
+
+
+/* ========================================
+   BILLING BOX
+======================================== */
+
+.billing-box {
+
+  text-align: left;
+
+  background: var(--background);
+
+  padding: 25px;
+
+  border-radius: 14px;
+
+  margin-bottom: 30px;
+
+}
+
+
+.billing-box h2 {
+
+  color: var(--primary);
+
+  font-size: 22px;
+
+  margin-bottom: 20px;
+
+}
+
+
+.billing-box h3 {
+
+  color: var(--primary);
+
+  font-size: 18px;
+
+  margin: 20px 0 15px;
+
+}
+
+
+/* ========================================
+   BILLING ROW
+======================================== */
+
+.billing-row {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 9px 0;
+
+}
+
+
+.billing-row span {
+
+  color: var(--text-secondary);
+
+}
+
+
+.billing-row strong {
+
+  color: var(--text);
+
+  text-align: right;
+
+}
+
+
+/* ========================================
+   BILLING ITEM
+======================================== */
+
+.billing-item {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid
+    rgba(0, 0, 0, 0.08);
+
+}
+
+
+.billing-item:last-child {
+
+  border-bottom: none;
+
+}
+
+
+.billing-item > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+}
+
+
+.billing-item strong {
+
+  color: var(--text);
+
+}
+
+
+.billing-item span {
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+
+}
+
+
+/* ========================================
+   HORIZONTAL LINE
+======================================== */
+
+.billing-box hr {
+
+  border: none;
+
+  border-top: 1px solid
+    rgba(0, 0, 0, 0.1);
+
+  margin: 15px 0;
+
+}
+
+
+/* ========================================
+   TOTAL
+======================================== */
+
+.billing-total {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding-top: 15px;
+
+  margin-top: 10px;
+
+  border-top: 2px solid
+    rgba(0, 0, 0, 0.1);
+
+}
+
+
+.billing-total span {
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color: var(--text);
+
+}
+
+
+.billing-total strong {
+
+  font-size: 22px;
+
+  color: var(--primary);
+
+}
+
+
+/* ========================================
+   CONTINUE SHOPPING
+======================================== */
+
+.continue-shopping {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 14px 22px;
+
+  background: var(--primary);
+
+  color: white;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+
+}
+
+
+.continue-shopping:hover {
+
+  opacity: 0.9;
+
+  transform: translateY(-1px);
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .success-page {
+
+    padding: 35px 15px;
+
+  }
+
+
+  .success-card {
+
+    padding: 40px 20px;
+
+    border-radius: 15px;
+
+  }
+
+
+  .success-card h1 {
+
+    font-size: 30px;
+
+  }
+
+
+  .order-number {
+
+    flex-direction: column;
+
+    gap: 8px;
+
+  }
+
+
+  .billing-box {
+
+    padding: 18px;
+
+  }
+
+
+  .billing-row {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+  }
+
+
+  .billing-row strong {
+
+    text-align: left;
+
+  }
+
+
+  .billing-item {
+
+    align-items: flex-start;
+
+  }
+
+
+  .billing-total strong {
+
+    font-size: 19px;
+
+  }
+
+}

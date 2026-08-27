@@ -1,0 +1,112 @@
+/* ========================================
+   THEME TOGGLE
+======================================== */
+
+.theme-toggle {
+  position: relative;
+
+  width: 58px;
+  height: 30px;
+
+  padding: 3px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 30px;
+
+  background: var(--background);
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* ========================================
+   SLIDER
+======================================== */
+
+.theme-toggle-slider {
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--surface);
+
+  color: var(--primary);
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* ========================================
+   LIGHT MODE
+======================================== */
+
+.theme-toggle.light {
+  justify-content: flex-start;
+}
+
+.theme-toggle.light .theme-toggle-slider {
+  transform: translateX(0);
+}
+
+
+/* ========================================
+   DARK MODE
+======================================== */
+
+.theme-toggle.dark {
+  justify-content: flex-end;
+
+  background: var(--primary);
+
+  border-color: var(--primary);
+}
+
+.theme-toggle.dark .theme-toggle-slider {
+  transform: translateX(0);
+
+  background: #1f2937;
+
+  color: #fbbf24;
+}
+
+
+/* ========================================
+   HOVER
+======================================== */
+
+.theme-toggle:hover {
+  opacity: 0.9;
+}
+
+
+/* ========================================
+   FOCUS
+======================================== */
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+
+  outline-offset: 3px;
+}

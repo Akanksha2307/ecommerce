@@ -1,0 +1,557 @@
+/* ========================================
+   ORDERS PAGE
+======================================== */
+
+.orders-page {
+  min-height: 70vh;
+  padding: 60px 20px;
+}
+
+
+/* ========================================
+   ORDERS CONTAINER
+======================================== */
+
+.orders-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.orders-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+.orders-header span {
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+
+.orders-header h1 {
+  color: var(--text-primary);
+  font-size: 38px;
+  margin: 8px 0;
+}
+
+
+.orders-header p {
+  color: var(--text-secondary);
+}
+
+
+/* ========================================
+   ORDERS LIST
+======================================== */
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  overflow: visible;
+}
+
+
+/* ========================================
+   ORDER CARD
+======================================== */
+
+.order-card {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  background: var(--surface);
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  box-shadow: var(--shadow);
+
+  overflow: visible;
+
+  display: block;
+
+  margin: 0;
+
+  z-index: 1;
+}
+
+
+/* ========================================
+   ORDER HEADER
+======================================== */
+
+.order-card-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+
+.order-card-header div:first-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.order-card-header span {
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+
+.order-card-header strong {
+  color: var(--primary);
+
+  font-size: 18px;
+}
+
+
+/* ========================================
+   ORDER STATUS
+======================================== */
+
+.order-status {
+  background: var(--background);
+
+  color: var(--primary);
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   ORDER DATE
+======================================== */
+
+.order-date {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+
+  margin-top: 8px;
+}
+
+
+/* ========================================
+   PRODUCTS
+======================================== */
+
+.order-products {
+  margin-top: 25px;
+
+  width: 100%;
+
+  overflow: visible;
+}
+
+
+.order-products h3 {
+  color: var(--primary);
+
+  margin-bottom: 12px;
+}
+
+
+.order-product {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 0;
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+
+.order-product > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 0;
+}
+
+
+.order-product strong {
+  color: var(--text-primary);
+}
+
+
+.order-product span {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   ORDER SUMMARY
+======================================== */
+
+.order-summary {
+  margin-top: 20px;
+
+  padding-top: 15px;
+
+  border-top:
+    1px solid var(--border);
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  overflow: visible;
+}
+
+
+.order-summary > div {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 7px 0;
+
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+
+.order-summary span {
+  color: var(--text-secondary);
+}
+
+
+.order-summary strong {
+  color: var(--text-primary);
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   TOTAL
+======================================== */
+
+.order-summary .order-total {
+  margin-top: 10px;
+
+  padding-top: 15px;
+
+  border-top:
+    2px solid var(--border);
+}
+
+
+.order-total span {
+  color: var(--text-primary);
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+
+.order-total strong {
+  color: var(--primary);
+
+  font-size: 22px;
+}
+
+
+/* ========================================
+   VIEW ORDER BUTTON
+======================================== */
+
+.view-order {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 20px;
+
+  padding: 11px 18px;
+
+  background: var(--primary);
+
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  float: none;
+
+  z-index: auto;
+}
+
+
+.view-order:hover {
+  opacity: 0.9;
+
+  transform: translateY(-1px);
+}
+
+
+/* ========================================
+   NO ORDERS
+======================================== */
+
+.no-orders {
+  background: var(--surface);
+
+  padding: 60px 30px;
+
+  text-align: center;
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow);
+
+  color: var(--text-primary);
+}
+
+
+.no-orders svg {
+  color: var(--primary);
+
+  margin-bottom: 15px;
+}
+
+
+.no-orders h2 {
+  color: var(--text-primary);
+}
+
+
+.no-orders p {
+  color: var(--text-secondary);
+
+  margin-bottom: 25px;
+}
+
+
+/* ========================================
+   SHOP BUTTON
+======================================== */
+
+.shop-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 13px 20px;
+
+  background: var(--primary);
+
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.orders-message {
+  background: var(--surface);
+
+  padding: 40px;
+
+  text-align: center;
+
+  border-radius: 15px;
+
+  box-shadow: var(--shadow);
+
+  color: var(--text-secondary);
+}
+
+
+.orders-message.error {
+  color: var(--danger);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .orders-page {
+    padding: 40px 15px;
+  }
+
+
+  .orders-container {
+    width: 100%;
+  }
+
+
+  .orders-header {
+    margin-bottom: 30px;
+  }
+
+
+  .orders-header h1 {
+    font-size: 30px;
+  }
+
+
+  .order-card {
+    padding: 20px;
+
+    width: 100%;
+  }
+
+
+  .order-card-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+
+  .order-status {
+    align-self: flex-start;
+  }
+
+
+  .order-product {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+
+  .order-product > div {
+    max-width: 70%;
+  }
+
+
+  .order-summary > div {
+    gap: 10px;
+  }
+
+
+  .order-total strong {
+    font-size: 19px;
+  }
+
+
+  .view-order {
+    width: 100%;
+
+    margin-top: 20px;
+
+    position: relative;
+
+    z-index: auto;
+  }
+
+}
+/* ========================================
+   FIX ORDER SUMMARY ON ORDERS PAGE
+======================================== */
+
+.orders-page .order-summary {
+  position: static;
+
+  background: transparent;
+
+  padding: 0;
+
+  border-radius: 0;
+
+  box-shadow: none;
+
+  top: auto;
+
+  margin-top: 20px;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  overflow: visible;
+}
+
+
+/* ========================================
+   VIEW ORDER STAYS INSIDE ORDER CARD
+======================================== */
+
+.orders-page .view-order {
+  position: static;
+
+  display: inline-flex;
+
+  margin-top: 20px;
+
+  z-index: auto;
+
+  float: none;
+}
