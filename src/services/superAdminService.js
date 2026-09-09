@@ -1,6 +1,5 @@
 const API_URL =
-  "http://localhost:5000/api/super-admin";
-
+  `${import.meta.env.VITE_API_URL}/api/super-admin`;
 
 // ======================================================
 // TOKEN

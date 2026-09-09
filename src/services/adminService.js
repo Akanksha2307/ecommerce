@@ -1,6 +1,5 @@
 const API_URL =
-  "http://localhost:5000/api/admin";
-
+  `${import.meta.env.VITE_API_URL}/api/admin`;
 
 const getToken = () => {
 

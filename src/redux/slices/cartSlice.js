@@ -9,7 +9,7 @@ import {
 // ========================================
 
 const API_URL =
-  "http://localhost:5000/api/cart";
+  `${import.meta.env.VITE_API_URL}/api/cart`;
 
 
 // ========================================
