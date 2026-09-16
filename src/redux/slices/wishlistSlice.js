@@ -35,38 +35,23 @@ const normalizeId = (id) => {
 // COMMON RESPONSE HANDLER
 // ========================================
 
-const handleResponse = async (
-  response
-) => {
-
+const handleResponse = async (response) => {
   let data = {};
 
   try {
-
-    data =
-      await response.json();
-
+    data = await response.json();
   } catch {
-
-    data = {};
-
+    // Response has no JSON body
   }
-
 
   if (!response.ok) {
-
     throw new Error(
-      data.message ||
-      "Something went wrong"
+      data.message || "Something went wrong"
     );
-
   }
 
-
   return data;
-
 };
-
 
 // ========================================
 // LOAD USER WISHLIST

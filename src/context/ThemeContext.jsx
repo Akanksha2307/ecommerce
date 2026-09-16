@@ -3,6 +3,8 @@ import {
   useContext,
 } from "react";
 
+/* eslint-disable react-refresh/only-export-components */
+
 import {
   useColorScheme,
 } from "@mui/material/styles";

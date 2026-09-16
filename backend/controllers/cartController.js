@@ -147,7 +147,6 @@ export const addToCart = async (
       id,
       title,
       price,
-      thumbnail,
       quantity,
     } = req.body;
 

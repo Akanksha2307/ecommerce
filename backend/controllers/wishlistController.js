@@ -140,9 +140,6 @@ export const addToWishlist = async (
       id,
       title,
       price,
-      thumbnail,
-      category,
-      rating,
     } = req.body;
 
 

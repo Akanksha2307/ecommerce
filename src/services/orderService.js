@@ -14,15 +14,13 @@ const getToken = () => {
 // HANDLE AUTH ERROR
 // ========================================
 
-const handleResponse = async (response) => {
-
-  let data = {};
-
-  try {
+const handleResponse = async (response) => { 
+  let data = {}; 
+  try { 
     data = await response.json();
-  } catch {
-    data = {};
-  }
+   } catch {
+     // Response has no JSON body 
+     }
 
 
   // ========================================

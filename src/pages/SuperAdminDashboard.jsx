@@ -153,9 +153,12 @@ const SuperAdminDashboard = () => {
 
   useEffect(() => {
 
-    loadAdmins();
+  // Load admins when the dashboard opens.
+  // The function updates component state after the API call.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  loadAdmins();
 
-  }, []);
+}, []);
 
 
   // ====================================================

@@ -237,7 +237,7 @@ const AdminDashboard =
     // ==================================================
 
     const [
-      productImage,
+      ,
       setProductImage,
     ] = useState(null);
 
@@ -314,17 +314,6 @@ const AdminDashboard =
       loading,
       setLoading,
     ] = useState(true);
-
-
-    // ==================================================
-    // LOAD EVERYTHING
-    // ==================================================
-
-    useEffect(() => {
-
-      loadDashboard();
-
-    }, []);
 
 
     // ==================================================
@@ -543,6 +532,29 @@ const AdminDashboard =
 
       };
 
+
+    // ==================================================
+    // LOAD EVERYTHING
+    // ==================================================
+
+ useEffect(() => {
+  let cancelled = false;
+
+  const initializeDashboard = async () => {
+    if (cancelled) return;
+
+    await loadDashboard();
+  };
+
+  initializeDashboard();
+
+  return () => {
+    cancelled = true;
+  };
+
+  // loadDashboard is intentionally called once when the dashboard mounts.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
     // ==================================================
     // PRODUCT INPUT

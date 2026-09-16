@@ -60,55 +60,28 @@ const request = async (
   let data = {};
 
   try {
-
-    data =
-      await response.json();
-
+    data = await response.json();
   } catch {
-
-    data = {};
-
+    // Response has no JSON body
   }
-
 
   if (!response.ok) {
+    if (response.status === 401) {
+      localStorage.removeItem("adminToken");
+      localStorage.removeItem("adminEmail");
+      localStorage.removeItem("adminPermissions");
 
-    if (
-      response.status === 401
-    ) {
+      window.location.href = "/admin/login";
 
-      localStorage.removeItem(
-        "adminToken"
-      );
-
-      localStorage.removeItem(
-        "adminEmail"
-      );
-
-      localStorage.removeItem(
-        "adminPermissions"
-      );
-
-      window.location.href =
-        "/admin/login";
-
-      throw new Error(
-        "Admin session expired"
-      );
-
+      throw new Error("Admin session expired");
     }
 
-
     throw new Error(
-      data.message ||
-      "Something went wrong"
+      data.message || "Something went wrong"
     );
-
   }
 
-
   return data;
-
 };
 
 
