@@ -43,10 +43,7 @@ jobs:
 
       - name: Create backend archive
         run: |
-          tar \
-            --exclude='backend/.env' \
-            --exclude='backend/node_modules' \
-            -czf backend.tar.gz backend
+          tar --exclude='backend/.env' --exclude='backend/node_modules' -czf backend.tar.gz backend
 
       - name: Copy backend to EC2
         uses: appleboy/scp-action@v1
