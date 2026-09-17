@@ -8,7 +8,8 @@ on:
       - 'backend/**'
 
 jobs:
-  backend-tests:
+
+  test-backend:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,3 +33,56 @@ jobs:
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
           NODE_ENV: test
+
+
+  deploy-backend:
+    needs: test-backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create deployment package
+        run: |
+          tar --exclude='backend/.env' \
+              --exclude='backend/node_modules' \
+              -czf backend.tar.gz backend
+
+      - name: Copy backend to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: "backend.tar.gz"
+          target: "~/"
+
+      - name: Deploy backend on EC2
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd ~/ecommerce
+
+            tar -xzf ~/backend.tar.gz
+
+            cd ~/ecommerce/backend
+
+            npm ci
+
+            docker stop ecommerce-backend || true
+            docker rm ecommerce-backend || true
+
+            docker build -t ecommerce-backend .
+
+            docker run -d \
+              --name ecommerce-backend \
+              -p 5000:5000 \
+              --env-file .env \
+              --restart unless-stopped \
+              ecommerce-backend
+
+            docker ps
