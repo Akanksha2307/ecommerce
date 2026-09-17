@@ -8,4 +8,4 @@ describe("GreenCart Backend", () => {
   test("backend test environment is working", () => {
     expect("GreenCart").toBe("GreenCart");
   });
-});
+});// CI test
