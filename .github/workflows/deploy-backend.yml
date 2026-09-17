@@ -1,4 +1,4 @@
-name: Deploy Backend to EC2
+name: Backend CI/CD
 
 on:
   push:
@@ -19,70 +19,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: npm
           cache-dependency-path: backend/package-lock.json
 
       - name: Install dependencies
         working-directory: backend
         run: npm ci
 
-      - name: Run Backend API Tests
+      - name: Run backend tests
         working-directory: backend
         run: npm test
-        env:
-          MONGO_URI: ${{ secrets.MONGO_URI }}
-          NODE_ENV: test
-
-  deploy-backend:
-    needs: backend-tests
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Create backend archive
-        run: |
-          tar --exclude='backend/.env' --exclude='backend/node_modules' -czf backend.tar.gz backend
-
-      - name: Copy backend to EC2
-        uses: appleboy/scp-action@v1
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          source: "backend.tar.gz"
-          target: "~/ecommerce"
-
-      - name: Deploy backend on EC2
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            cd ~/ecommerce
-
-            rm -rf backend_new
-            mkdir backend_new
-
-            tar -xzf backend.tar.gz -C backend_new --strip-components=1
-
-            cp -a backend_new/. backend/
-
-            rm -rf backend_new
-            rm -f backend.tar.gz
-
-            cd backend
-
-            docker build -t ecommerce-backend .
-
-            docker stop ecommerce-backend || true
-            docker rm ecommerce-backend || true
-
-            docker run -d \
-              --name ecommerce-backend \
-              -p 5000:5000 \
-              --env-file .env \
-              --restart unless-stopped \
-              ecommerce-backend
