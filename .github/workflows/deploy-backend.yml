@@ -33,8 +33,11 @@ jobs:
         run: npm ci
 
       - name: Run Backend API Tests
-        working-directory: backend
-        run: npm test
+  working-directory: backend
+  run: npm test
+  env:
+    MONGO_URI: ${{ secrets.MONGO_URI }}
+    NODE_ENV: test
 
 
   # ========================================
