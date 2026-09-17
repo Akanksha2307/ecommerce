@@ -126,15 +126,17 @@ app.get(
 const PORT =
   process.env.PORT || 5000;
 
-app.listen(
-  PORT,
-  () => {
+if (process.env.NODE_ENV !== "test") {
+  app.listen(
+    PORT,
+    () => {
+      console.log(
+        `Server running on http://localhost:${PORT}`
+      );
+    }
+  );
+}
 
-    console.log(
-      `Server running on http://localhost:${PORT}`
-    );
-
-  }
-);
+export default app;
 // GitHub Actions backend deployment test
 // Backend CI/CD test - SSH fixed
