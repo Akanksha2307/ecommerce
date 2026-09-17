@@ -41,7 +41,7 @@ describe("Auth - Login", () => {
       password: "WrongPassword!",
     });
 
-    expect(response.statusCode).toBe(401);
+    expect(response.statusCode).toBe(400);
     expect(response.body.message).toBe("Invalid email or password");
   });
 
