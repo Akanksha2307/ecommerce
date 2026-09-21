@@ -1,0 +1,31 @@
+name: Selenium Smoke Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: e2e/package.json
+
+      - name: Install Selenium dependencies
+        working-directory: e2e
+        run: npm install
+
+      - name: Run Selenium smoke tests
+        working-directory: e2e
+        run: npm run smoke
+        env:
+          FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
+          BACKEND_URL: ${{ secrets.BACKEND_URL }}
+          
