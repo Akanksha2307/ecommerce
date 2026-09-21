@@ -41,7 +41,7 @@ async function check(name, fn) {
 }
 
 // -----------------------------
-// MAIN TEST FUNCTION
+// MAIN FUNCTION
 // -----------------------------
 
 async function main() {
@@ -131,43 +131,31 @@ async function main() {
     // CHROME OPTIONS
     // -----------------------------
 
-    const options = new chrome.Options();
+   const options = new chrome.Options();
 
-    options.addArguments("--log-level=3");
-    options.addArguments("--disable-logging");
-    options.addArguments("--disable-gpu");
+options.addArguments("--headless=new");
+options.addArguments("--no-sandbox");
+options.addArguments("--disable-dev-shm-usage");
 
-    options.addArguments(
-      "--disable-background-networking"
-    );
+options.addArguments("--disable-gpu");
+options.addArguments("--disable-software-rasterizer");
+options.addArguments("--disable-gpu-compositing");
 
-    options.addArguments(
-      "--disable-component-update"
-    );
+options.addArguments("--disable-logging");
+options.addArguments("--log-level=3");
 
-    options.addArguments(
-      "--disable-sync"
-    );
-
-    options.addArguments(
-      "--disable-default-apps"
-    );
-
-    options.addArguments(
-      "--no-first-run"
-    );
-
-    options.addArguments(
-      "--disable-features=Translate"
-    );
+options.addArguments("--disable-background-networking");
+options.addArguments("--disable-component-update");
+options.addArguments("--disable-sync");
+options.addArguments("--disable-default-apps");
+options.addArguments("--no-first-run");
 
     // -----------------------------
     // CHROME DRIVER SERVICE
     // -----------------------------
 
     const service = new chrome.ServiceBuilder()
-      .enableVerboseLogging(false);
-
+  .setStdio("ignore");
     // -----------------------------
     // CREATE SELENIUM DRIVER
     // -----------------------------
@@ -217,7 +205,7 @@ async function main() {
           `${FRONTEND_URL}/login`
         );
 
-        // Wait for email field
+        // Email field
         await driver.wait(
           until.elementLocated(
             By.name("email")
@@ -225,12 +213,12 @@ async function main() {
           10000
         );
 
-        // Check password field
+        // Password field
         await driver.findElement(
           By.name("password")
         );
 
-        // Check login button
+        // Submit button
         await driver.findElement(
           By.css("button[type='submit']")
         );
@@ -244,13 +232,12 @@ async function main() {
     // -----------------------------
 
     if (driver) {
-
       await driver.quit();
     }
   }
 
   // -----------------------------
-  // FINAL TEST RESULT
+  // FINAL RESULT
   // -----------------------------
 
   const failed = results.filter(
@@ -265,11 +252,10 @@ async function main() {
   );
 
   // -----------------------------
-  // FAIL WORKFLOW IF ANY TEST FAILED
+  // FAIL IF ANY TEST FAILED
   // -----------------------------
 
   if (failed.length > 0) {
-
     process.exit(1);
   }
 }
